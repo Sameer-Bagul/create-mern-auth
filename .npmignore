@@ -1,0 +1,24 @@
+# local dev
+node_modules/
+.vscode/
+.idea/
+.DS_Store
+.env
+*.log
+
+# git + CI
+.git
+.github
+.github/workflows
+
+# local build artifacts
+dist/
+.build/
+coverage/
+
+# editor + OS
+*.swp
+Thumbs.db
+
+# template lockfiles (we'll remove them below)
+template/**/package-lock.json

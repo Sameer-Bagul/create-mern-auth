@@ -1,0 +1,50 @@
+{
+  "name": "create-mern-auth",
+  "version": "1.0.0",
+  "description": "CLI to scaffold a MERN authentication starter (client + server) with OTP, JWT, email verification and more.",
+  "bin": {
+    "create-mern-auth": "./bin/create-mern-auth.js"
+  },
+  "type": "module",
+  "files": [
+    "bin/",
+    "template/",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "scripts": {
+    "test": "node --version",
+    "lint": "echo \"no lint configured\""
+  },
+  "keywords": [
+    "mern",
+    "cli",
+    "auth",
+    "starter",
+    "boilerplate",
+    "fullstack",
+    "react",
+    "nodejs",
+    "express",
+    "mongodb",
+    "jwt"
+  ],
+  "author": "Sameer Bagul <sameerbagul2004@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sameer-Bagul/create-mern-auth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sameer-Bagul/create-mern-auth/issues"
+  },
+  "homepage": "https://github.com/Sameer-Bagul/create-mern-auth#readme",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "figlet": "^1.5.2",
+    "fs-extra": "^11.2.0",
+    "gradient-string": "^2.0.1",
+    "ora": "^6.1.2"
+  }
+}
