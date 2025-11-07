@@ -1,6 +1,6 @@
 {
   "name": "create-mern-auth",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI to scaffold a MERN authentication starter (client + server) with OTP, JWT, email verification and more.",
   "bin": {
     "create-mern-auth": "./bin/create-mern-auth.js"
