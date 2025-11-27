@@ -1,9 +1,9 @@
 {
-  "name": "create-mern-auth",
+  "name": "create-e2e-saas",
   "version": "1.0.4",
   "description": "CLI to scaffold a MERN authentication starter (client + server) with OTP, JWT, email verification and more.",
   "bin": {
-    "create-mern-auth": "./bin/create-mern-auth.js"
+    "create-e2e-saas": "./bin/create-e2e-saas.js"
   },
   "type": "module",
   "files": [

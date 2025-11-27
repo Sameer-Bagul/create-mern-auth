@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * create-mern-auth
- * Modern MERN Authentication Starter CLI
+ * create-e2e-saas
+ * E2E SaaS project scaffolder (renamed from create-mern-auth)
  * by Sameer Bagul 🚀
  */
 
@@ -15,31 +15,27 @@ import gradient from "gradient-string";
 import figlet from "figlet";
 import process from "process";
 
-// Resolve paths safely (ESM)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// CLI args
 const args = process.argv.slice(2);
-const targetDir = args[0] || "my-mern-auth";
+const targetDir = args[0] || "my-e2e-saas";
 const doInstall = args.includes("--install") || args.includes("-i");
 const templateDir = path.join(__dirname, "../template");
 
 const log = console.log;
 
-/* ---------- Banner ---------- */
 function showBanner() {
   console.log(
     "\n" +
       gradient.pastel.multiline(
-        figlet.textSync("MERN AUTH", { horizontalLayout: "fitted" })
+        figlet.textSync("E2E SAAS", { horizontalLayout: "fitted" })
       )
   );
-  console.log(chalk.cyan("⚡ Rapid Auth Starter for MERN, SaaS & Hackathon Projects"));
+  console.log(chalk.cyan("⚡ Rapid E2E SaaS Starter for MERN & Small Teams"));
   console.log(chalk.gray("by Sameer Bagul • github.com/Sameer-Bagul\n"));
 }
 
-/* ---------- Copy Template ---------- */
 async function copyTemplate() {
   if (fs.existsSync(targetDir)) {
     log(chalk.red(`❗ Directory "${targetDir}" already exists. Aborting.`));
@@ -69,7 +65,6 @@ async function copyTemplate() {
   spinner.succeed(chalk.green("✔ Template copied successfully!\n"));
 }
 
-/* ---------- Rename .env Files ---------- */
 function renameEnvFiles(dir) {
   const items = fs.readdirSync(dir, { withFileTypes: true });
   for (const item of items) {
@@ -83,7 +78,6 @@ function renameEnvFiles(dir) {
   }
 }
 
-/* ---------- Replace Project Name Placeholders ---------- */
 function replacePlaceholders() {
   const serverPkg = path.join(targetDir, "server", "package.json");
   const clientPkg = path.join(targetDir, "client", "package.json");
@@ -100,7 +94,6 @@ function replacePlaceholders() {
   update(clientPkg);
 }
 
-/* ---------- Optional Dependency Installation ---------- */
 function installDeps() {
   const server = path.join(targetDir, "server");
   const client = path.join(targetDir, "client");
@@ -120,12 +113,11 @@ function installDeps() {
   install(client, "Client");
 }
 
-/* ---------- Main CLI Flow ---------- */
 async function main() {
   console.clear();
   showBanner();
 
-  log(chalk.white(`🚀 Creating new MERN Auth project: ${chalk.green(targetDir)}\n`));
+  log(chalk.white(`🚀 Creating new E2E SaaS project: ${chalk.green(targetDir)}\n`));
 
   await copyTemplate();
   renameEnvFiles(targetDir);
@@ -153,7 +145,6 @@ async function main() {
   log(gradient.instagram("✨ Happy Hacking! 🚀\n"));
 }
 
-/* ---------- Run CLI ---------- */
 main().catch((err) => {
   console.error(chalk.red("❌ Error during setup:"), err.message);
   process.exit(1);
